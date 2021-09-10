@@ -56,8 +56,8 @@ def menu(update: Update, _: CallbackContext) -> int:
     keyboard = [
         ["💵 Current value", "📈 Progress"],
         ["➗ Current ratios", "🔀 Next coin"],
-        ["🔍 Check bot status", "⌛ Trade History"],
-        ["🛠 Maintenance", "⚙️ Configurations"],
+        # ["🔍 Check bot status", "⌛ Trade History"],
+        # ["🛠 Maintenance", "⚙️ Configurations"],
     ]
 
     config_keyboard = [
