@@ -142,6 +142,8 @@ def current_value():
 
             # Generate message
             try:
+                if return_rate_1_day > 1000: return_rate_1_day = 0.0
+                if return_rate_7_day > 1000: return_rate_7_day = 0.0
                 m_list = [
                     f"\nLast update: `{last_update.strftime('%H:%M:%S %d/%m/%Y')}`\n\n"
                     f"*Current coin {current_coin}:*\n"
