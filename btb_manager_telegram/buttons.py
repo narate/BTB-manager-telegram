@@ -147,13 +147,16 @@ def current_value():
                 if return_rate_7_day > 1000: return_rate_7_day = 0.0
                 if return_rate_7_day < 0: return_rate_7_day = f'[ดอย 🗻] {return_rate_7_day}'
                 
+                change_in_value = round((balance * usd_price - buy_price) / buy_price * 100, 2)
+                if change_in_value < 0: change_in_value = f'[ดอย 🗻] {change_in_value}'
+                
                 m_list = [
                     f"\nLast update: `{last_update.strftime('%H:%M:%S %d/%m/%Y')}`\n\n"
                     f"*Current coin {current_coin}:*\n"
                     f"\t\- Balance: `{format_float(balance)}` *{current_coin}*\n"
                     f"\t\- Exchange rate purchased: `{format_float(buy_price / alt_amount)}` *{bridge}*/*{current_coin}* \n"
                     f"\t\- Exchange rate now: `{format_float(usd_price)}` *USD*/*{current_coin}*\n"
-                    f"\t\- Change in value: `{round((balance * usd_price - buy_price) / buy_price * 100, 2)}` *%*\n"
+                    f"\t\- Change in value: `{change_in_value}` *%*\n"
                     f"\t\- Value in *USD*: `{round(balance * usd_price, 2)}` *USD*\n"
                     f"\t\- Value in *BTC*: `{format_float(balance * btc_price)}` *BTC*\n\n"
                     f"_Bought for_ `{round(buy_price, 2)}` *{bridge}*\n"
